@@ -1,0 +1,73 @@
+ProcessConfig = uSimMarineV22                                   
+{                                                               
+  AppTick   = 4                                                 
+  CommsTick = 4                                                 
+                                                                
+  start_x       = 0                                             
+  start_y       = 0                                             
+  start_heading = 0                                             
+  start_speed   = 0                                             
+  start_depth   = 0                                             
+  start_pos     = x=0, y=0, speed=0, heading=0, depth=0         
+  max_speed     = 5                                             
+                                                                
+  drift_x       = 0                                             
+  drift_y       = 0                                             
+  rotate_speed  = 0                                             
+  drift_vector  = 0,0      // heading, magnitude             
+                                                                
+  turn_spd_map_full_speed = 1    // meters/sec (Default = 1)    
+  turn_spd_map_null_speed = 0    // meters/sec (Default = 0)    
+  turn_spd_map_full_rate = 100  // Range [0,100] (Default = 100)
+  turn_spd_map_null_rate = 0    // Range [0,100] (Default = 0)  
+                                                                
+  buoyancy_rate        = 0.025    // meters/sec                 
+  max_acceleration     = 0        // meters/sec^2               
+  max_deceleration     = 0.5      // meters/sec^2               
+  max_depth_rate       = 0.5      // meters/sec                 
+  max_depth_rate_speed = 2.0      // meters/sec                 
+                                                                
+  wind_conditions = spd=3.3, dir=180                            
+  polar_plot = 0,0: 20,40: 45,65: 90,80: 110,90:                
+               135,83: 150,83: 165,60: 180,50                   
+                                                                
+  sim_pause            = false    // or {true}                  
+  dual_state           = false    // or {true}                  
+  thrust_reflect       = false    // or {true}                  
+  thrust_factor        = 20       // range [0,inf)              
+  turn_rate            = 70       // range [0,100]              
+  thrust_map           = 0:0, 20:1, 40:2, 60:3, 80:5, 100:5     
+                                                                
+  turn_spd_loss        = 0.7      // [0,1] Default is 0.85      
+                                                                
+  prefix               = NAV_     // Default is USM_            
+  post_navpos_summary  = true     // Default is false           
+                                                                
+  // In Embedded PID mode, may want to publish DES_RUDDER/THRUST
+  // Any MOOS vars ok but not DESIRED_RUDDER and DESIRED_THRUST 
+  post_des_thrust      = DESIRED_THRUSTX                        
+  post_des_rudder      = DESIRED_RUDDERX                        
+                                                                
+  // BELOW are embedded PID controller config params            
+  depth_control = false                                         
+                                                                
+  // Yaw PID controller                                         
+  yaw_pid_kp             = 0.4                                  
+  yaw_pid_kd             = 0.1                                  
+  yaw_pid_ki             = 0.0                                  
+  yaw_pid_integral_limit = 0.07                                 
+                                                                
+  // Speed PID controller                                       
+  speed_pid_kp           = 1.0                                  
+  speed_pid_kd           = 0.0                                  
+  speed_pid_ki           = 0.0                                  
+  speed_pid_integral_limit = 0.07                               
+                                                                
+  // Maximums                                                   
+  maxrudder  = 100                                              
+  maxthrust  = 100                                              
+                                                                
+  // A non-zero SPEED_FACTOR overrides use of SPEED_PID         
+  // Will set DESIRED_THRUST = DESIRED_SPEED * SPEED_FACTOR     
+  speed_factor = 20                                             
+} 

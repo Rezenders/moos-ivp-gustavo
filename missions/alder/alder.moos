@@ -4,8 +4,8 @@ ServerPort = 9000
 Community  = alder
 MOOSTimeWarp = 1
 
-LatOrigin  = 43.825300 
-LongOrigin = -70.330400 
+LatOrigin  = 43.825300
+LongOrigin = -70.330400
 
 //------------------------------------------
 // Antler config block
@@ -20,7 +20,7 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	@ NewConsole = false
   Run = uProcessWatch @ NewConsole = false
   Run = pHelmIvP      @ NewConsole = false
-  //Run = pOdometry     @ NewConsole = false
+  Run = pOdometry     @ NewConsole = false
 }
 
 //------------------------------------------
@@ -69,7 +69,7 @@ ProcessConfig = pHelmIvP
   Domain     = course:0:359:360
   Domain     = speed:0:4:21
 
-  //IVP_BEHAVIOR_DIR = ../../lib
+  IVP_BEHAVIOR_DIR = ../../lib
 
   ok_skew = any
   start_in_drive = false
